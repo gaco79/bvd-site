@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Back Vertex Distance Calculator</title>
+	<link rel="stylesheet" media="all" href="style.css">
+	<meta name="author" content="Gareth Cooper">
+	<meta name="robots" content="index, follow">
+	<meta property="og:title" content="Back Vertex Distance Compensator" />
+	<meta property="og:description"
+	content="Simple online calculator to adjust spectacle Rx for changes in back vertex distance" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="http://bvdcalculator.garethcooper.com/" />
+	<meta property="og:image" content="" />
+	<meta name="description" content="Simple online tool to compensate lens power for changes in back vertex distance. Often used to calculate the power of a contact lens given the spectacle Rx.">
+	<meta name="keywords"
+	content="optometry, optics, BVD, back vertex distance, vertex distance, sphere, cylinder, cyl, axis, spectacle, glasses, Rx, contact lens, power">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<script src="assets/modernizr.js" type="text/javascript"></script>
+</head>
+<body>
+
+	<header>
+		<div class="row">
+			<div class="medium-9 columns text-center">
+				<h1>
+					Back Vertex Distance Compensator <small> by <a
+						href="http://garethcooper.com/author/gareth" target="_blank"
+						rel="author">Gareth Cooper</a></small>
+					</h1>
+				</div>
+				<div class="medium-3 columns text-right">
+					<a
+					href="http://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fbvdcalculator.garethcooper.com"
+					title="Share this on Facebook" class="gc-share-button facebook"><i
+					class="icon-facebook"></i></a> <a
+					href="https://twitter.com/intent/tweet?url=http%3a%2f%2fbvdcalculator.garethcooper.com&amp;text=Compensate+a+spectacle+Rx+for+changes+in+back+vertex+distance&amp;via=gaco79"
+					title="Share this on Twitter" class="gc-share-button twitter"><i
+					class="icon-twitter"></i></a> <a
+					href="https://plus.google.com/share?url=http%3a%2f%2fbvdcalculator.garethcooper.com"
+					title="Share this on Google Plus"
+					class="gc-share-button google-plus"><i class="icon-gplus"></i></a>
+				</div>
+			</div>
+		</header>
+
+		<form id="R" class="rx">
+			<div class="row" style="margin-top: 1rem;">
+				<div class="small-1 columns">
+					<h6>ORIGINAL Rx</h6>
+				</div>
+				<div class="small-1 columns text-right">
+					<h2 class="drop">R:</h2>
+				</div>
+				<div class="small-3 columns">
+					<label>Sphere <input type="text" name="sph" id="sph"
+						value="PLANO" autofocus />
+					</label>
+				</div>
+				<div class="small-3 columns">
+					<label>Cyl <input type="text" name="Cyl" id="cyl" />
+					</label>
+				</div>
+				<div class="small-3 columns end">
+					<label>Axis <input type="text" name="Axis" id="axis" />
+					</label>
+				</div>
+			</div>
+			<input type="hidden" id="outputId" value="#newR" />
+		</form>
+
+		<form id="L" class="rx">
+			<div class="row">
+				<div class="small-2 columns text-right">
+					<h2>L:</h2>
+				</div>
+				<div class="small-3 columns">
+					<input type="text" name="sph" id="sph" value="PLANO" />
+				</div>
+				<div class="small-3 columns">
+					<input type="text" name="Cyl" id="cyl" />
+				</div>
+				<div class="small-3 columns end">
+					<input type="text" name="Axis" id="axis" />
+				</div>
+			</div>
+			<input type="hidden" id="outputId" value="#newL" />
+		</form>
+
+		<form id="bvd">
+			<div class="row">
+				<div class="medium-6 columns">
+					<div class="row collapse">
+						<div class="small-12 medium-4 columns">
+							<span class="prefix">Original BVD: </span>
+						</div>
+						<div class="small-9 medium-7 columns">
+							<input type="number" min="0" max="30" name="originalBvd"
+							id="originalBvd" value="13" class="text-right bvd">
+						</div>
+						<div class="small-3 medium-1 columns">
+							<span class="postfix">mm</span>
+						</div>
+					</div>
+				</div>
+				<div class="medium-6 columns">
+					<div class="row collapse">
+						<div class="small-12 medium-4 columns">
+							<span class="prefix">New BVD: </span>
+						</div>
+						<div class="small-9 medium-7 columns">
+							<input type="number" min="0" max="30" name="newBvd" id="newBvd"
+							value="0" class="text-right bvd">
+						</div>
+						<div class="small-3 medium-1 columns">
+							<span class="postfix">mm</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+
+		<div class="row newRx" id="newR">
+			<div class="small-1 columns">
+				<h6>COMPENSATED Rx</h6>
+			</div>
+			<div class="small-1 columns text-right">
+				<h2>R:</h2>
+			</div>
+			<div class="small-10 columns">
+				<span id="outputR"></span>
+			</div>
+		</div>
+
+		<div class="row newRx" id="newL">
+			<div class="small-2 columns text-right">
+				<h2>L:</h2>
+			</div>
+			<div class="small-10 columns">
+				<span id="outputL"></span>
+			</div>
+		</div>
+
+		<hr />
+
+		<div class="ad">
+			<div class="row">
+				<div class="small-12 columns text-center">
+					<!-- Responsive Ad-->
+					<ins class="adsbygoogle" style="display: block"
+					data-ad-client="ca-pub-1505715680830732" data-ad-slot="3997992800"
+					data-ad-format="auto"></ins>
+					<script>
+					(adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+				</div>
+			</div>
+		</div>
+
+		<hr />
+
+		<div class="row">
+			<div class="small-12 columns">
+				<dl class="accordion" data-accordion>
+					<dd class="accordion-navigation">
+						<a href="#whatisthis">What is This?</a>
+						<div id="whatisthis" class="content active">
+							<p>This online calculator provides a simple method to adjust a
+								lens power when changes are made to the vertex distance of an
+								optical lens. This adjustment is commonly carried out by an optician when
+								calculating the power of a contact lens, given the spectacle lens
+								prescription.</p>
+								<p>Type any valid spectacle Rx into the input boxes provided,
+									and the compensated Rx will appear below.</p>
+								</div>
+							</dd>
+							<dd class="accordion-navigation">
+								<a href="#cookies">Cookies and Adverts</a>
+								<div id="cookies" class="content">
+									<p>We use cookies to personalise ads displayed on this site and to analyse our traffic.
+										We also share information about your use of our site with our advertising and
+										analytics partners. <a href="privacy.html">Read More.</a></p>
+									</div>
+								</dd>
+								<dd class="accordion-navigation">
+									<a href="#moreinformation">More Information</a>
+									<div id="moreinformation" class="content">
+										<!-- <p>The theory behind why a lens power must be changed when the
+										vertex distance of the lens is changed is explained well here.</p> -->
+										<p>
+											The jQuery plugin used to power this site is <a
+											href="https://github.com/gaco79/bvd-calculator"
+											title="jQuery BVD-Calculator Plugin Source" target="_blank">hosted at GitHub</a>
+										</p>
+									</div>
+								</dd>
+							</dl>
+						</div>
+					</div>
+
+					<hr />
+
+					<ol class="joyride-list" data-joyride>
+						<li data-id="newR" data-text="Next" data-options="tip_location: top; prev_button: false">
+							<p>Hello and welcome to the Joyride <br>documentation page.</p>
+						</li>
+					</ol>
+
+					<script src="all.min.js" type="text/javascript"></script>
+					<script type="text/javascript">
+					$(document).foundation();
+					$('.rx').bvd_calculator();
+					</script>
+					<script async
+					src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				</body>
+				</html>
