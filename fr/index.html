@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculateur de la Distance Verre-œil</title>
+    <link rel="stylesheet" media="all" href="../style.css">
+    <meta name="author" content="Gareth Cooper">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Calculateur de Distance Vertex Postérieure" />
+    <meta property="og:description"
+        content="Simple calculateur en ligne pour ajuster la prescription de lunettes en fonction des changements de distance vertex postérieure" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://bvdcalculator.garethcooper.com/fr/" />
+    <meta property="og:image" content="" />
+    <meta name="description"
+        content="Un outil en ligne simple pour compenser la puissance des lentilles en fonction des changements de distance vertex postérieure. Souvent utilisé pour calculer la puissance d'une lentille de contact à partir d'une prescription de lunettes.">
+    <meta name="keywords"
+        content="optométrie, optique, BVD, distance vertex postérieure, distance vertex, sphère, cylindre, cyl, axe, lunettes, Rx, lentille de contact, puissance">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="../assets/modernizr.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="row">
+            <div class="medium-8 columns text-center">
+                <h1>
+                    Calculateur de la Distance Verre-œil <small> par Gareth Cooper</small>
+                </h1>
+            </div>
+            <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js"
+                data-name="bmc-button" data-slug="gaco79" data-color="#FFDD00" data-emoji="" data-font="Cookie"
+                data-text="M'offrir un café" data-outline-color="#000000" data-font-color="#000000"
+                data-coffee-color="#ffffff"></script>
+        </div>
+    </header>
+
+    <div
+        style="color: rgba(240,240,250,.9); background-color: darkslateblue; padding: 0.5rem; font-size: .8rem; text-align: center; text-transform: uppercase;">
+        Bonjour à tous.
+        Ce site n'a pas été mis à jour
+        depuis des années ! J'apprécierais vos <a
+            href="mailto:bvdcalculator@garethcooper.com?subject=Idées%20d'amélioration">idées
+            d'amélioration</a>.</div>
+
+    <form id="R" class="rx">
+        <div class="row" style="margin-top: 1rem;">
+            <div class="small-1 columns">
+                <h6>Rx ORIGINAL</h6>
+            </div>
+            <div class="small-1 columns text-right">
+                <h2 class="drop">D:</h2>
+            </div>
+            <div class="small-3 columns">
+                <label>Sphère <input type="text" name="sph" id="sph" value="PLAN" autofocus />
+                </label>
+            </div>
+            <div class="small-3 columns">
+                <label>Cyl <input type="text" name="Cyl" id="cyl" />
+                </label>
+            </div>
+            <div class="small-3 columns end">
+                <label>Axe <input type="text" name="Axis" id="axis" />
+                </label>
+            </div>
+        </div>
+        <input type="hidden" id="outputId" value="#newR" />
+    </form>
+
+    <form id="L" class="rx">
+        <div class="row">
+            <div class="small-2 columns text-right">
+                <h2>G:</h2>
+            </div>
+            <div class="small-3 columns">
+                <input type="text" name="sph" id="sph" value="PLAN" />
+            </div>
+            <div class="small-3 columns">
+                <input type="text" name="Cyl" id="cyl" />
+            </div>
+            <div class="small-3 columns end">
+                <input type="text" name="Axis" id="axis" />
+            </div>
+        </div>
+        <input type="hidden" id="outputId" value="#newL" />
+    </form>
+
+    <form id="bvd">
+        <div class="row">
+            <div class="medium-6 columns">
+                <div class="row collapse">
+                    <div class="small-12 medium-4 columns">
+                        <span class="prefix">BVD original: </span>
+                    </div>
+                    <div class="small-9 medium-7 columns">
+                        <input type="number" min="0" max="30" name="originalBvd" id="originalBvd" value="13"
+                            class="text-right bvd">
+                    </div>
+                    <div class="small-3 medium-1 columns">
+                        <span class="postfix">mm</span>
+                    </div>
+                </div>
+            </div>
+            <div class="medium-6 columns">
+                <div class="row collapse">
+                    <div class="small-12 medium-4 columns">
+                        <span class="prefix">Nouveau BVD: </span>
+                    </div>
+                    <div class="small-9 medium-7 columns">
+                        <input type="number" min="0" max="30" name="newBvd" id="newBvd" value="0"
+                            class="text-right bvd">
+                    </div>
+                    <div class="small-3 medium-1 columns">
+                        <span class="postfix">mm</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="row newRx" id="newR">
+        <div class="small-1 columns">
+            <h6>Rx COMPENSÉ</h6>
+        </div>
+        <div class="small-1 columns text-right">
+            <h2>D:</h2>
+        </div>
+        <div class="small-10 columns">
+            <span id="outputR"></span>
+        </div>
+    </div>
+
+    <div class="row newRx" id="newL">
+        <div class="small-2 columns text-right">
+            <h2>G:</h2>
+        </div>
+        <div class="small-10 columns">
+            <span id="outputL"></span>
+        </div>
+    </div>
+
+    <hr />
+
+    <div class="ad">
+        <div class="row">
+            <div class="small-12 columns text-center">
+                <!-- Responsive Ad-->
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <ins class="adsbygoogle" style="display: block" data-ad-client="ca-pub-1505715680830732"
+                    data-ad-slot="3997992800" data-ad-format="auto"></ins>
+                <script>
+                    (window.adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </div>
+    </div>
+
+    <hr />
+
+    <div class="row">
+        <div class="small-12 columns">
+            <dl class="accordion" data-accordion>
+                <dd class="accordion-navigation">
+                    <a href="#whatisthis">Qu'est-ce que c'est?</a>
+                    <div id="whatisthis" class="content active">
+                        <p>Ce calculateur en ligne fournit une méthode simple pour ajuster la
+                            puissance d'une lentille lorsque des modifications sont apportées à la distance vertex d'une
+                            lentille optique. Cet ajustement est communément effectué par un opticien lors du
+                            calcul de la puissance d'une lentille de contact, étant donné la prescription
+                            des lunettes.</p>
+                        <p>Tapez n'importe quelle prescription de lunettes valide dans les cases de saisie fournies,
+                            et la prescription compensée apparaîtra ci-dessous.</p>
+                    </div>
+                </dd>
+                <dd class="accordion-navigation">
+                    <a href="#cookies">Cookies et Publicités</a>
+                    <div id="cookies" class="content">
+                        <p>Nous utilisons des cookies pour personnaliser les publicités affichées sur ce site et pour
+                            analyser notre trafic.
+                            Nous partageons également des informations sur votre utilisation de notre site avec nos
+                            partenaires
+                            publicitaires et analytiques. <a href="../privacy.html">En savoir plus.</a></p>
+                    </div>
+                </dd>
+                <dd class="accordion-navigation">
+                    <a href="#moreinformation">Plus d'informations</a>
+                    <div id="moreinformation" class="content">
+                        <p>
+                            Le plugin jQuery utilisé pour alimenter ce site est <a
+                                href="https://github.com/gaco79/bvd-calculator"
+                                title="jQuery BVD-Calculator Plugin Source" target="_blank">hébergé sur GitHub</a>
+                        </p>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+    </div>
+
+    <hr />
+
+    <script src="../assets/jquery.min.js" defer></script>
+    <script src="../assets/foundation.min.js" defer></script>
+    <script src="../assets/jquery.bvd_calculator.min.js" defer></script>
+    <script src="../assets/shareButtons.min.js" defer></script>
+    <script src="../assets/googleAnalyticsTracking.min.js" defer></script>
+    <script type="text/javascript" defer>
+        document.addEventListener('DOMContentLoaded', function () {
+            $(document).foundation();
+            $('.rx').bvd_calculator();
+        });
+    </script>
+
+</body>
+
+</html>
