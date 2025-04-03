@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 
 <head>
 	<meta charset="UTF-8">
-	<title>Back Vertex Distance Calculator</title>
+	<title>Calculadora de Distância do Vértice Posterior</title>
 	<link rel="stylesheet" media="all" href="style.css">
+	<link rel="alternate" hreflang="en" href="https://bvdcalculator.garethcooper.com/" />
 	<link rel="alternate" hreflang="es" href="https://bvdcalculator.garethcooper.com/es/" />
 	<link rel="alternate" hreflang="fr" href="https://bvdcalculator.garethcooper.com/fr/" />
-	<link rel="alternate" hreflang="pt" href="https://bvdcalculator.garethcooper.com/pt/" />
 	<meta name="author" content="Gareth Cooper">
 	<meta name="robots" content="index, follow">
-	<meta property="og:title" content="Back Vertex Distance Compensator" />
+	<meta property="og:title" content="Calculadora de Compensação da Distância do Vértice Posterior" />
 	<meta property="og:description"
-		content="Simple online calculator to adjust spectacle Rx for changes in back vertex distance" />
+		content="Calculadora online simples para ajustar a prescrição de óculos para mudanças na distância do vértice posterior" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="http://bvdcalculator.garethcooper.com/" />
+	<meta property="og:url" content="http://bvdcalculator.garethcooper.com/pt/" />
 	<meta property="og:image" content="" />
 	<meta name="description"
-		content="Simple online tool to compensate lens power for changes in back vertex distance. Often used to calculate the power of a contact lens given the spectacle Rx.">
+		content="Ferramenta online simples para compensar a potência da lente devido a mudanças na distância do vértice posterior. Frequentemente usada para calcular a potência de uma lente de contato com base na prescrição de óculos.">
 	<meta name="keywords"
-		content="optometry, optics, BVD, back vertex distance, vertex distance, sphere, cylinder, cyl, axis, spectacle, glasses, Rx, contact lens, power">
+		content="optometria, óptica, BVD, distância do vértice posterior, distância do vértice, esfera, cilindro, eixo, óculos, lentes, prescrição, lentes de contato, potência">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
@@ -28,41 +28,41 @@
 		<div class="row">
 			<div class="medium-8 columns text-center">
 				<h1>
-					Back Vertex Distance Compensator <small> by Gareth Cooper</small>
+					Calculadora de Compensação da Distância do Vértice Posterior <small> por Gareth Cooper</small>
 				</h1>
 			</div>
 			<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js"
 				data-name="bmc-button" data-slug="gaco79" data-color="#FFDD00" data-emoji="" data-font="Cookie"
-				data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000"
+				data-text="Compre-me um café" data-outline-color="#000000" data-font-color="#000000"
 				data-coffee-color="#ffffff"></script>
 		</div>
 	</header>
 
 	<div
 		style="color: rgba(240,240,250,.9); background-color: darkslateblue; padding: 0.5rem; font-size: .8rem; text-align: center; text-transform: uppercase;">
-		Hi all.
-		This site hasn't had an update
-		for years! I'd appreciate any <a href="mailto:bvdcalculator@garethcooper.com?subject=Improvement%20Ideas">ideas
-			for improvement</a>.</div>
+		Olá a todos.
+		Este site não é atualizado
+		há anos! Agradeço qualquer <a href="mailto:bvdcalculator@garethcooper.com?subject=Ideias%20de%20Melhoria">ideia
+			de melhoria</a>.</div>
 
 	<form id="R" class="rx">
 		<div class="row" style="margin-top: 1rem;">
 			<div class="small-1 columns">
-				<h6>ORIGINAL Rx</h6>
+				<h6>Rx ORIGINAL</h6>
 			</div>
 			<div class="small-1 columns text-right">
-				<h2 class="drop">R:</h2>
+				<h2 class="drop">D:</h2>
 			</div>
 			<div class="small-3 columns">
-				<label>Sphere <input type="text" name="sph" id="sph" value="PLANO" autofocus />
+				<label>Esfera <input type="text" name="sph" id="sph" value="PLANO" autofocus />
 				</label>
 			</div>
 			<div class="small-3 columns">
-				<label>Cyl <input type="text" name="Cyl" id="cyl" />
+				<label>Cil <input type="text" name="Cyl" id="cyl" />
 				</label>
 			</div>
 			<div class="small-3 columns end">
-				<label>Axis <input type="text" name="Axis" id="axis" />
+				<label>Eixo <input type="text" name="Axis" id="axis" />
 				</label>
 			</div>
 		</div>
@@ -72,7 +72,7 @@
 	<form id="L" class="rx">
 		<div class="row">
 			<div class="small-2 columns text-right">
-				<h2>L:</h2>
+				<h2>E:</h2>
 			</div>
 			<div class="small-3 columns">
 				<input type="text" name="sph" id="sph" value="PLANO" />
@@ -92,7 +92,7 @@
 			<div class="medium-6 columns">
 				<div class="row collapse">
 					<div class="small-12 medium-4 columns">
-						<span class="prefix">Original BVD: </span>
+						<span class="prefix">BVD Original: </span>
 					</div>
 					<div class="small-9 medium-7 columns">
 						<input type="number" min="0" max="30" name="originalBvd" id="originalBvd" value="13"
@@ -106,7 +106,7 @@
 			<div class="medium-6 columns">
 				<div class="row collapse">
 					<div class="small-12 medium-4 columns">
-						<span class="prefix">New BVD: </span>
+						<span class="prefix">Novo BVD: </span>
 					</div>
 					<div class="small-9 medium-7 columns">
 						<input type="number" min="0" max="30" name="newBvd" id="newBvd" value="0"
@@ -122,10 +122,10 @@
 
 	<div class="row newRx" id="newR">
 		<div class="small-1 columns">
-			<h6>COMPENSATED Rx</h6>
+			<h6>Rx COMPENSADO</h6>
 		</div>
 		<div class="small-1 columns text-right">
-			<h2>R:</h2>
+			<h2>D:</h2>
 		</div>
 		<div class="small-10 columns">
 			<span id="outputR"></span>
@@ -134,7 +134,7 @@
 
 	<div class="row newRx" id="newL">
 		<div class="small-2 columns text-right">
-			<h2>L:</h2>
+			<h2>E:</h2>
 		</div>
 		<div class="small-10 columns">
 			<span id="outputL"></span>
@@ -146,7 +146,7 @@
 	<div class="ad">
 		<div class="row">
 			<div class="small-12 columns text-center">
-				<!-- Responsive Ad-->
+				<!-- Anúncio Responsivo -->
 				<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 				<ins class="adsbygoogle" style="display: block" data-ad-client="ca-pub-1505715680830732"
 					data-ad-slot="3997992800" data-ad-format="auto"></ins>
@@ -163,34 +163,34 @@
 		<div class="small-12 columns">
 			<dl class="accordion" data-accordion>
 				<dd class="accordion-navigation">
-					<a href="#whatisthis">What is This?</a>
+					<a href="#whatisthis">O que é Isso?</a>
 					<div id="whatisthis" class="content active">
-						<p>This online calculator provides a simple method to adjust a
-							lens power when changes are made to the vertex distance of an
-							optical lens. This adjustment is commonly carried out by an optician when
-							calculating the power of a contact lens, given the spectacle lens
-							prescription.</p>
-						<p>Type any valid spectacle Rx into the input boxes provided,
-							and the compensated Rx will appear below.</p>
+						<p>Esta calculadora online fornece um método simples para ajustar a
+							potência de uma lente quando mudanças são feitas na distância do vértice de uma
+							lente óptica. Este ajuste é comumente realizado por um optometrista ao
+							calcular a potência de uma lente de contato com base na prescrição de óculos.</p>
+						<p>Digite qualquer prescrição válida de óculos nas caixas de entrada fornecidas,
+							e a prescrição compensada aparecerá abaixo.</p>
 					</div>
 				</dd>
 				<dd class="accordion-navigation">
-					<a href="#cookies">Cookies and Adverts</a>
+					<a href="#cookies">Cookies e Anúncios</a>
 					<div id="cookies" class="content">
-						<p>We use cookies to personalise ads displayed on this site and to analyse our traffic.
-							We also share information about your use of our site with our advertising and
-							analytics partners. <a href="privacy.html">Read More.</a></p>
+						<p>Usamos cookies para personalizar os anúncios exibidos neste site e para analisar nosso
+							tráfego.
+							Também compartilhamos informações sobre o uso do nosso site com nossos parceiros de
+							publicidade e
+							analítica. <a href="privacy.html">Leia Mais.</a></p>
 					</div>
 				</dd>
 				<dd class="accordion-navigation">
-					<a href="#moreinformation">More Information</a>
+					<a href="#moreinformation">Mais Informações</a>
 					<div id="moreinformation" class="content">
-						<!-- <p>The theory behind why a lens power must be changed when the
-										vertex distance of the lens is changed is explained well here.</p> -->
 						<p>
-							The jQuery plugin used to power this site is <a
+							O plugin jQuery usado para alimentar este site está <a
 								href="https://github.com/gaco79/bvd-calculator"
-								title="jQuery BVD-Calculator Plugin Source" target="_blank">hosted at GitHub</a>
+								title="Código Fonte do Plugin jQuery BVD-Calculator" target="_blank">hospedado no
+								GitHub</a>
 						</p>
 					</div>
 				</dd>
