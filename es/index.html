@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
-    <title>Calculateur de la Distance Verre-œil</title>
+    <title>Calculadora de Distancia al Vértice Posterior</title>
     <link rel="stylesheet" media="all" href="../style.css">
     <link rel="alternate" hreflang="en" href="https://bvdcalculator.garethcooper.com/" />
-    <link rel="alternate" hreflang="es" href="https://bvdcalculator.garethcooper.com/es/" />
+    <link rel="alternate" hreflang="fr" href="https://bvdcalculator.garethcooper.com/fr/" />
     <meta name="author" content="Gareth Cooper">
     <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Calculateur de Distance Vertex Verre-œil" />
+    <meta property="og:title" content="Compensador de Distancia al Vértice Posterior" />
     <meta property="og:description"
-        content="Simple calculateur en ligne pour ajuster la prescription de lunettes en fonction des changements de distance vertex postérieure" />
+        content="Calculadora online simple para ajustar recetas de gafas por cambios en la distancia al vértice posterior" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://bvdcalculator.garethcooper.com/fr/" />
+    <meta property="og:url" content="http://bvdcalculator.garethcooper.com/" />
     <meta property="og:image" content="" />
     <meta name="description"
-        content="Un outil en ligne simple pour compenser la puissance des lentilles en fonction des changements de distance vertex postérieure. Souvent utilisé pour calculer la puissance d'une lentille de contact à partir d'une prescription de lunettes.">
+        content="Herramienta online simple para compensar la potencia de lentes por cambios en la distancia al vértice posterior. A menudo utilizada para calcular la potencia de lentes de contacto dada la receta de gafas.">
     <meta name="keywords"
-        content="optométrie, optique, BVD, distance vertex postérieure, distance vertex, sphère, cylindre, cyl, axe, lunettes, Rx, lentille de contact, puissance">
+        content="optometría, óptica, BVD, distancia al vértice posterior, distancia al vértice, esfera, cilindro, cil, eje, gafas, anteojos, Rx, lentes de contacto, potencia">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <script src="../assets/modernizr.js" defer></script>
@@ -29,23 +29,15 @@
         <div class="row">
             <div class="medium-8 columns text-center">
                 <h1>
-                    Calculateur de la Distance Verre-œil <small> par Gareth Cooper</small>
+                    Compensador de Distancia al Vértice Posterior<br /><small> por Gareth Cooper</small>
                 </h1>
             </div>
             <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js"
                 data-name="bmc-button" data-slug="gaco79" data-color="#FFDD00" data-emoji="" data-font="Cookie"
-                data-text="M'offrir un café" data-outline-color="#000000" data-font-color="#000000"
+                data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000"
                 data-coffee-color="#ffffff"></script>
         </div>
     </header>
-
-    <div
-        style="color: rgba(240,240,250,.9); background-color: darkslateblue; padding: 0.5rem; font-size: .8rem; text-align: center; text-transform: uppercase;">
-        Bonjour à tous.
-        Ce site n'a pas été mis à jour
-        depuis des années ! J'apprécierais vos <a
-            href="mailto:bvdcalculator@garethcooper.com?subject=Idées%20d'amélioration">idées
-            d'amélioration</a>.</div>
 
     <form id="R" class="rx">
         <div class="row" style="margin-top: 1rem;">
@@ -56,15 +48,15 @@
                 <h2 class="drop">D:</h2>
             </div>
             <div class="small-3 columns">
-                <label>Sphère <input type="text" name="sph" id="sph" value="PLAN" autofocus />
+                <label>Esfera <input type="text" name="sph" id="sph" value="PLANO" autofocus />
                 </label>
             </div>
             <div class="small-3 columns">
-                <label>Cyl <input type="text" name="Cyl" id="cyl" />
+                <label>Cil <input type="text" name="Cyl" id="cyl" />
                 </label>
             </div>
             <div class="small-3 columns end">
-                <label>Axe <input type="text" name="Axis" id="axis" />
+                <label>Eje <input type="text" name="Axis" id="axis" />
                 </label>
             </div>
         </div>
@@ -74,10 +66,10 @@
     <form id="L" class="rx">
         <div class="row">
             <div class="small-2 columns text-right">
-                <h2>G:</h2>
+                <h2>I:</h2>
             </div>
             <div class="small-3 columns">
-                <input type="text" name="sph" id="sph" value="PLAN" />
+                <input type="text" name="sph" id="sph" value="PLANO" />
             </div>
             <div class="small-3 columns">
                 <input type="text" name="Cyl" id="cyl" />
@@ -94,7 +86,7 @@
             <div class="medium-6 columns">
                 <div class="row collapse">
                     <div class="small-12 medium-4 columns">
-                        <span class="prefix">BVD original: </span>
+                        <span class="prefix">DPV Original: </span>
                     </div>
                     <div class="small-9 medium-7 columns">
                         <input type="number" min="0" max="30" name="originalBvd" id="originalBvd" value="13"
@@ -108,7 +100,7 @@
             <div class="medium-6 columns">
                 <div class="row collapse">
                     <div class="small-12 medium-4 columns">
-                        <span class="prefix">Nouveau BVD: </span>
+                        <span class="prefix">Nueva DPV: </span>
                     </div>
                     <div class="small-9 medium-7 columns">
                         <input type="number" min="0" max="30" name="newBvd" id="newBvd" value="0"
@@ -124,7 +116,7 @@
 
     <div class="row newRx" id="newR">
         <div class="small-1 columns">
-            <h6>Rx COMPENSÉ</h6>
+            <h6>Rx COMPENSADA</h6>
         </div>
         <div class="small-1 columns text-right">
             <h2>D:</h2>
@@ -136,7 +128,7 @@
 
     <div class="row newRx" id="newL">
         <div class="small-2 columns text-right">
-            <h2>G:</h2>
+            <h2>I:</h2>
         </div>
         <div class="small-10 columns">
             <span id="outputL"></span>
@@ -165,34 +157,36 @@
         <div class="small-12 columns">
             <dl class="accordion" data-accordion>
                 <dd class="accordion-navigation">
-                    <a href="#whatisthis">Qu'est-ce que c'est?</a>
+                    <a href="#whatisthis">¿Qué es esto?</a>
                     <div id="whatisthis" class="content active">
-                        <p>Ce calculateur en ligne fournit une méthode simple pour ajuster la
-                            puissance d'une lentille lorsque des modifications sont apportées à la distance vertex d'une
-                            lentille optique. Cet ajustement est communément effectué par un opticien lors du
-                            calcul de la puissance d'une lentille de contact, étant donné la prescription
-                            des lunettes.</p>
-                        <p>Tapez n'importe quelle prescription de lunettes valide dans les cases de saisie fournies,
-                            et la prescription compensée apparaîtra ci-dessous.</p>
+                        <p>Esta calculadora en línea proporciona un método simple para ajustar la
+                            potencia de una lente cuando se realizan cambios en la distancia al vértice de una
+                            lente óptica. Este ajuste es comúnmente realizado por un óptico cuando
+                            calcula la potencia de una lente de contacto, dada la prescripción
+                            de las gafas.</p>
+                        <p>Escriba cualquier receta válida de gafas en las casillas de entrada proporcionadas,
+                            y la receta compensada aparecerá debajo.</p>
                     </div>
                 </dd>
                 <dd class="accordion-navigation">
-                    <a href="#cookies">Cookies et Publicités</a>
+                    <a href="#cookies">Cookies y Anuncios</a>
                     <div id="cookies" class="content">
-                        <p>Nous utilisons des cookies pour personnaliser les publicités affichées sur ce site et pour
-                            analyser notre trafic.
-                            Nous partageons également des informations sur votre utilisation de notre site avec nos
-                            partenaires
-                            publicitaires et analytiques. <a href="../privacy.html">En savoir plus.</a></p>
+                        <p>Utilizamos cookies para personalizar los anuncios mostrados en este sitio y analizar nuestro
+                            tráfico.
+                            También compartimos información sobre su uso de nuestro sitio con nuestros socios de
+                            publicidad y
+                            análisis. <a href="privacy.html">Leer más.</a></p>
                     </div>
                 </dd>
                 <dd class="accordion-navigation">
-                    <a href="#moreinformation">Plus d'informations</a>
+                    <a href="#moreinformation">Más Información</a>
                     <div id="moreinformation" class="content">
+                        <!-- <p>La teoría detrás de por qué la potencia de una lente debe cambiarse cuando se
+										cambia la distancia al vértice está bien explicada aquí.</p> -->
                         <p>
-                            Le plugin jQuery utilisé pour alimenter ce site est <a
+                            El plugin de jQuery utilizado para potenciar este sitio está <a
                                 href="https://github.com/gaco79/bvd-calculator"
-                                title="jQuery BVD-Calculator Plugin Source" target="_blank">hébergé sur GitHub</a>
+                                title="jQuery BVD-Calculator Plugin Source" target="_blank">alojado en GitHub</a>
                         </p>
                     </div>
                 </dd>
